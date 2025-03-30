@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>滑板起跳演示</title>
+  <style>
+    body {
+      background: #e0f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    #skateboard {
+      width: 200px;
+      transition: transform 0.5s ease;
+    }
+    .jump {
+      transform: translateY(-100px) rotate(-5deg);
+    }
+    button {
+      margin-top: 40px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>滑板起跳演示</h1>
+  <img id="skateboard" src="skateboard.png" alt="滑板" />
+  <button onclick="jump()">开始起跳</button>
+
+  <script>
+    function jump() {
+      const board = document.getElementById('skateboard');
+      board.classList.add('jump');
+      setTimeout(() => board.classList.remove('jump'), 800);
+    }
+  </script>
+</body>
+</html>
+  
